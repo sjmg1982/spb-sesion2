@@ -2,6 +2,8 @@ package com.starwars.usecase.film;
 
 import com.starwars.model.Film;
 import com.starwars.repository.FilmRepository;
+import com.starwars.repository.PeopleRepository;
+import com.starwars.repository.PlanetRepository;
 import lombok.NonNull;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +13,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class SaveFilm {
     private FilmRepository filmRepository;
+    private PeopleRepository peopleRepository;
+    private PlanetRepository planetRepository;
 
-    public SaveFilm(FilmRepository filmRepository) {
+    public SaveFilm(FilmRepository filmRepository, PeopleRepository peopleRepository, PlanetRepository planetRepository) {
         this.filmRepository = filmRepository;
+        this.peopleRepository = peopleRepository;
+        this.planetRepository = planetRepository;
     }
+
     public Film execute(@NonNull Film film){
+        film.get
         return filmRepository.save(film);
     }
 }

@@ -1,6 +1,5 @@
 package com.starwars.usecase.planet;
 
-import com.starwars.model.Planet;
 import com.starwars.repository.PlanetRepository;
 import lombok.NonNull;
 import org.springframework.stereotype.Service;
