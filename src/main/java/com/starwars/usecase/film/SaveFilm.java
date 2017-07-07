@@ -1,6 +1,8 @@
 package com.starwars.usecase.film;
 
 import com.starwars.model.Film;
+import com.starwars.model.People;
+import com.starwars.model.Planet;
 import com.starwars.repository.FilmRepository;
 import com.starwars.repository.PeopleRepository;
 import com.starwars.repository.PlanetRepository;
@@ -23,7 +25,16 @@ public class SaveFilm {
     }
 
     public Film execute(@NonNull Film film){
-        film.get
+        film.getPlanets().forEach((Planet planet)-> {
+            if(!planetRepository.exists(planet.getPlanetId())) {
+                planetRepository.save(planet);
+            }
+        });
+        film.getPeople().forEach((People people)-> {
+            if(!peopleRepository.exists(people.getPeopleId())) {
+                peopleRepository.save(people);
+            }
+        });
         return filmRepository.save(film);
     }
 }
