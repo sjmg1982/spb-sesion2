@@ -2,6 +2,7 @@ package com.starwars.usecase.planet;
 
 import com.starwars.model.Planet;
 import com.starwars.repository.PlanetRepository;
+import lombok.NonNull;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,7 +17,7 @@ public class FindById {
         this.planetRepository = planetRepository;
     }
 
-    public Planet execute(Long id) {
+    public Planet execute(@NonNull Long id) {
         return planetRepository.findOne(id);
     }
 }

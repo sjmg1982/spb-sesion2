@@ -2,6 +2,7 @@ package com.starwars.usecase.planet;
 
 import com.starwars.model.Planet;
 import com.starwars.repository.PlanetRepository;
+import lombok.NonNull;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,10 +16,7 @@ public class SavePlanet {
         this.planetRepository = planetRepository;
     }
 
-    public Planet execute(Planet planet) throws NullPointerException {
-        if(planet==null) {
-            throw new NullPointerException("Planet is null");
-        }
+    public Planet execute(@NonNull Planet planet) {
         return planetRepository.save(planet);
     }
 }

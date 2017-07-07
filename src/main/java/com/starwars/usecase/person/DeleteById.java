@@ -2,6 +2,7 @@ package com.starwars.usecase.person;
 
 import com.starwars.model.People;
 import com.starwars.repository.PeopleRepository;
+import lombok.NonNull;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,7 +15,7 @@ public class DeleteById {
     public DeleteById(PeopleRepository peopleRepository) {
         this.peopleRepository = peopleRepository;
     }
-    public void execute(Long id) {
+    public void execute(@NonNull Long id) {
         peopleRepository.delete(id);
     }
 }

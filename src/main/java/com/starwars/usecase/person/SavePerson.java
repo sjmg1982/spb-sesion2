@@ -2,6 +2,7 @@ package com.starwars.usecase.person;
 
 import com.starwars.model.People;
 import com.starwars.repository.PeopleRepository;
+import lombok.NonNull;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,10 +15,7 @@ public class SavePerson {
     public SavePerson(PeopleRepository peopleRepository) {
         this.peopleRepository = peopleRepository;
     }
-    public People execute(People people) throws NullPointerException {
-        if(people==null) {
-            throw new NullPointerException("no existe people");
-        }
+    public People execute(@NonNull People people) {
         return peopleRepository.save(people);
     }
 }

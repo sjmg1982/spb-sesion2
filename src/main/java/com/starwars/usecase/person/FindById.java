@@ -2,6 +2,7 @@ package com.starwars.usecase.person;
 
 import com.starwars.model.People;
 import com.starwars.repository.PeopleRepository;
+import lombok.NonNull;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,7 +15,7 @@ public class FindById {
     public FindById(PeopleRepository peopleRepository) {
         this.peopleRepository = peopleRepository;
     }
-    public People execute(Long id) {
+    public People execute(@NonNull Long id) {
         return peopleRepository.findOne(id);
     }
 }
