@@ -15,7 +15,9 @@ public class DeletePerson {
     public DeletePerson(PeopleRepository peopleRepository) {
         this.peopleRepository = peopleRepository;
     }
-    public void execute(@NonNull Long id) {
+    public People execute(@NonNull Long id) {
+        People found=peopleRepository.findOne(id);
         peopleRepository.delete(id);
+        return found;
     }
 }
