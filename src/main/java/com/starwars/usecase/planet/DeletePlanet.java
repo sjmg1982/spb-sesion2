@@ -2,24 +2,23 @@ package com.starwars.usecase.planet;
 
 import com.starwars.model.Planet;
 import com.starwars.repository.PlanetRepository;
+import lombok.NonNull;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 /**
  * Created by sjmg on 7/07/17.
  */
 @Service
-public class FindAll {
+public class DeletePlanet {
     private PlanetRepository planetRepository;
 
 
-    public FindAll(PlanetRepository planetRepository) {
+    public DeletePlanet(PlanetRepository planetRepository) {
         this.planetRepository = planetRepository;
     }
 
-    public List<Planet> execute() {
+    public void execute(@NonNull Long id) {
 
-        return planetRepository.findAll();
+        planetRepository.delete(id);
     }
 }

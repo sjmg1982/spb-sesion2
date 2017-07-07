@@ -12,10 +12,10 @@ import java.util.List;
  * Created by sjmg on 7/07/17.
  */
 @Service
-public class FindAll {
+public class FindAllFilms {
     private FilmRepository filmRepository;
 
-    public FindAll(FilmRepository filmRepository) {
+    public FindAllFilms(FilmRepository filmRepository) {
         this.filmRepository = filmRepository;
     }
     public List<Film> execute() {

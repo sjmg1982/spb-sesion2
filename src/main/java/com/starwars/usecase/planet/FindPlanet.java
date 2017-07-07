@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
  * Created by sjmg on 7/07/17.
  */
 @Service
-public class FindById {
+public class FindPlanet {
     private PlanetRepository planetRepository;
 
 
-    public FindById(PlanetRepository planetRepository) {
+    public FindPlanet(PlanetRepository planetRepository) {
         this.planetRepository = planetRepository;
     }
 

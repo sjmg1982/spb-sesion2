@@ -1,20 +1,20 @@
 package com.starwars.usecase.film;
 
+import com.starwars.model.Film;
 import com.starwars.repository.FilmRepository;
-import lombok.NonNull;
 import org.springframework.stereotype.Service;
 
 /**
  * Created by sjmg on 7/07/17.
  */
 @Service
-public class DeleteById {
+public class FindFilm {
     private FilmRepository filmRepository;
 
-    public DeleteById(FilmRepository filmRepository) {
+    public FindFilm(FilmRepository filmRepository) {
         this.filmRepository = filmRepository;
     }
-    public void execute(@NonNull Long id) {
-        filmRepository.delete(id);
+    public Film execute(Long id) {
+        return filmRepository.findOne(id);
     }
 }
