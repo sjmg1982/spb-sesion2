@@ -15,6 +15,6 @@ public class FindAll {
         this.peopleRepository = peopleRepository;
     }
     public List<People> execute() {
-        return peopleRepository.findAll():
+        return peopleRepository.findAll();
     }
 }

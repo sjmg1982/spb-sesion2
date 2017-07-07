@@ -13,6 +13,6 @@ public class FindById {
         this.peopleRepository = peopleRepository;
     }
     public People execute(Long id) {
-        return peopleRepository.findOne(id):
+        return peopleRepository.findOne(id);
     }
 }

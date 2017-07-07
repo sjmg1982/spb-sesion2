@@ -12,7 +12,7 @@ public class DeleteById {
     public DeleteById(PeopleRepository peopleRepository) {
         this.peopleRepository = peopleRepository;
     }
-    public People execute(Long id) {
-        return peopleRepository.delete(id):
+    public void execute(Long id) {
+        peopleRepository.delete(id);
     }
 }

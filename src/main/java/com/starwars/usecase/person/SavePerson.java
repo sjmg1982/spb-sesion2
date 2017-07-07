@@ -16,6 +16,6 @@ public class SavePerson {
         if(people==null) {
             throw new NullPointerException("no existe people");
         }
-        return peopleRepository.save(people):
+        return peopleRepository.save(people);
     }
 }

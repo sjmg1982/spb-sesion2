@@ -14,8 +14,8 @@ public class DeleteById {
         this.planetRepository = planetRepository;
     }
 
-    public Planet execute(Long id) {
+    public void execute(Long id) {
 
-        return planetRepository.delete(id);
+        planetRepository.delete(id);
     }
 }
